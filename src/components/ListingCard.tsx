@@ -28,12 +28,12 @@ export function ListingCard({ listing }: { listing: Listing }) {
         </div>
         <p className="text-sm text-muted-foreground leading-relaxed flex-1">{listing.description}</p>
         <div className="flex items-center gap-2 pt-3">
-          <button className="flex-1 px-4 py-2.5 rounded-full bg-primary text-primary-foreground text-sm hover:opacity-90 transition-opacity">
+          <button className="flex-1 px-4 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm hover:opacity-90 transition-opacity">
             View Details
           </button>
           <button
             aria-label="Save"
-            className="grid place-items-center h-10 w-10 rounded-full border border-border hover:bg-secondary text-muted-foreground hover:text-primary transition-colors"
+            className="grid place-items-center h-10 w-10 rounded-lg border border-border hover:bg-secondary text-muted-foreground hover:text-primary transition-colors"
           >
             <Heart size={16} />
           </button>
