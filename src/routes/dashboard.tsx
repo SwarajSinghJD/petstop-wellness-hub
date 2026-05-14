@@ -160,8 +160,8 @@ function DashboardPage() {
         <h3 className="font-serif text-2xl mt-16 mb-6">Quick actions</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {actions.map(({ icon: Icon, label }) => (
-            <button key={label} className="group rounded-3xl bg-card border border-border/60 shadow-soft p-6 text-left hover:shadow-lift hover:-translate-y-1 transition-all duration-300">
-              <span className="grid place-items-center h-12 w-12 rounded-2xl bg-mauve-gradient text-primary-foreground">
+            <button key={label} className="group rounded-3xl bg-card border border-border shadow-soft p-6 text-left hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300">
+              <span className="grid place-items-center h-12 w-12 rounded-xl bg-mauve-gradient text-primary-foreground">
                 <Icon size={20} />
               </span>
               <div className="mt-5 font-serif text-xl">{label}</div>
