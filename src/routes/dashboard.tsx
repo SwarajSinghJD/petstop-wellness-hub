@@ -120,7 +120,7 @@ function DashboardPage() {
                     <div className="font-medium text-foreground">{r.title}</div>
                     <div className="text-xs text-muted-foreground mt-0.5">{r.date}</div>
                   </div>
-                  <button className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-foreground text-background text-xs hover:opacity-90 transition-opacity">
+                  <button className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-primary text-primary-foreground text-xs hover:opacity-90 transition-opacity">
                     <CheckCircle2 size={14} /> Done
                   </button>
                 </div>
