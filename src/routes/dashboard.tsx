@@ -80,12 +80,10 @@ function DashboardPage() {
           {overview.map(({ icon: Icon, label, value, tone }) => (
             <div key={label} className="rounded-3xl bg-card border border-border/60 shadow-soft p-6 hover:shadow-lift transition-all duration-300">
               <span
-                className={`grid place-items-center h-11 w-11 rounded-2xl ${
-                  tone === "warning" ? "bg-warning/20 text-warning" : "bg-success/20 text-success"
-                }`}
+                className="grid place-items-center h-11 w-11 rounded-xl"
                 style={{
-                  backgroundColor: tone === "warning" ? "oklch(0.80 0.13 75 / 0.18)" : "oklch(0.70 0.10 150 / 0.18)",
-                  color: tone === "warning" ? "oklch(0.45 0.13 65)" : "oklch(0.40 0.10 150)",
+                  backgroundColor: tone === "warning" ? "#F5ECD8" : "#E8F0E8",
+                  color: tone === "warning" ? "#A07840" : "#5C7A5C",
                 }}
               >
                 <Icon size={18} />
