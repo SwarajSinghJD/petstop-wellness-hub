@@ -14,18 +14,18 @@ export function SiteNav() {
     <header className="sticky top-0 z-40 backdrop-blur-md bg-background/80 border-b border-border/60">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5">
-          <span className="grid place-items-center h-10 w-10 rounded-2xl bg-mauve-gradient text-primary-foreground shadow-soft">
+          <span className="grid place-items-center h-10 w-10 rounded-xl bg-mauve-gradient text-primary-foreground shadow-soft">
             <PawPrint size={20} />
           </span>
           <span className="font-serif text-2xl tracking-tight text-foreground">PetStop</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden md:flex items-center gap-6">
           {links.map(({ to, label }) => (
             <Link
               key={to}
               to={to}
-              className="px-4 py-2 rounded-full text-sm text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors duration-200"
-              activeProps={{ className: "px-4 py-2 rounded-full text-sm bg-primary text-primary-foreground" }}
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 border-b border-transparent pb-1"
+              activeProps={{ className: "text-sm text-primary border-b border-primary pb-1" }}
               activeOptions={{ exact: to === "/" }}
             >
               {label}
@@ -34,7 +34,7 @@ export function SiteNav() {
         </nav>
         <Link
           to="/dashboard"
-          className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-foreground text-background text-sm hover:opacity-90 transition-opacity"
+          className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm hover:opacity-90 transition-opacity"
         >
           <PawPrint size={16} /> Add Your Pet
         </Link>
