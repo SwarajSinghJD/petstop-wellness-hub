@@ -61,16 +61,16 @@ function HomePage() {
                   <option>Groomer</option><option>Pet Shop</option>
                 </select>
               </div>
-              <button className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
+              <button className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
                 <Search size={16} /> Search
               </button>
             </div>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <Link to="/listings" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-foreground text-background hover:opacity-90 transition-opacity">
+              <Link to="/listings" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
                 <Stethoscope size={16} /> Find a Vet
               </Link>
-              <Link to="/dashboard" className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-foreground/20 text-foreground hover:bg-secondary transition-colors">
+              <Link to="/dashboard" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-[1.5px] border-primary text-primary hover:bg-primary/10 transition-colors">
                 <PawPrint size={16} /> Add Your Pet
               </Link>
             </div>
