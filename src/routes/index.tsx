@@ -138,14 +138,14 @@ function HomePage() {
 
       {/* AI Assistant teaser */}
       <section className="mx-auto max-w-7xl px-6 lg:px-10 py-28">
-        <div className="relative overflow-hidden rounded-[2.5rem] bg-mauve-gradient text-primary-foreground p-10 md:p-16 shadow-lift">
-          <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gold/30 blur-3xl" />
-          <div className="absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-background/10 blur-3xl" />
+        <div className="relative overflow-hidden rounded-3xl bg-mauve-gradient text-primary-foreground p-10 md:p-16 shadow-lift">
+          <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gold/20 blur-3xl" />
+          <div className="absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-gold/15 blur-3xl" />
           <div className="relative max-w-2xl">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-background/15 backdrop-blur text-xs tracking-wide uppercase">
               <Sparkles size={14} /> New · AI Pet Assistant
             </span>
-            <h2 className="mt-6 font-serif text-4xl md:text-6xl leading-tight">
+            <h2 className="mt-6 font-serif text-4xl md:text-6xl leading-tight text-primary-foreground">
               Meet your pet's personal AI companion.
             </h2>
             <p className="mt-5 text-primary-foreground/85 text-lg leading-relaxed">
@@ -153,14 +153,15 @@ function HomePage() {
               veterinary literature and gentle enough to talk to.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/assistant" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-background text-foreground hover:bg-background/90 transition-colors">
+              <Link to="/assistant" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-background text-foreground hover:bg-background/90 transition-colors">
                 <Sparkles size={16} /> Try the Assistant
               </Link>
-              <Link to="/emergency" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-background/10 backdrop-blur border border-background/20 hover:bg-background/20 transition-colors">
+              <Link to="/emergency" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-background/10 backdrop-blur border border-background/20 hover:bg-background/20 transition-colors">
                 <Clock size={16} /> 24/7 Emergency
               </Link>
             </div>
           </div>
+        </div>
         </div>
       </section>
 
