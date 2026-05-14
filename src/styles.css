@@ -4,18 +4,19 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* PetStop design system — warm, premium, hug-like */
+/* PetStop design system — aged parchment, warm leather, antique gold */
 
 @theme inline {
   --font-serif: "Cormorant Garamond", "Playfair Display", ui-serif, Georgia, serif;
   --font-sans: "DM Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 6px);
-  --radius-2xl: calc(var(--radius) + 14px);
-  --radius-3xl: calc(var(--radius) + 24px);
+  /* Tightened radius scale — premium editorial, not cartoonish */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --radius-2xl: 12px;
+  --radius-3xl: 16px;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -41,47 +42,47 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --shadow-soft: 0 1px 2px oklch(0.3 0.05 40 / 0.04), 0 8px 24px oklch(0.3 0.05 40 / 0.06);
-  --shadow-lift: 0 2px 4px oklch(0.3 0.05 40 / 0.05), 0 18px 40px oklch(0.3 0.05 40 / 0.10);
+  --shadow-soft: 0 1px 3px rgba(44, 34, 24, 0.04), 0 8px 24px rgba(44, 34, 24, 0.06);
+  --shadow-lift: 0 2px 6px rgba(44, 34, 24, 0.06), 0 16px 40px rgba(44, 34, 24, 0.10);
 }
 
 :root {
-  --radius: 1rem;
+  --radius: 12px;
 
-  /* Warm ivory base */
-  --background: oklch(0.975 0.012 80);
-  --foreground: oklch(0.25 0.02 40);
+  /* Warm parchment base */
+  --background: #F5F0E8;
+  --foreground: #2C2218;
 
-  --card: oklch(0.99 0.008 80);
-  --card-foreground: oklch(0.25 0.02 40);
-  --popover: oklch(0.99 0.008 80);
-  --popover-foreground: oklch(0.25 0.02 40);
+  --card: #FDFAF4;
+  --card-foreground: #2C2218;
+  --popover: #FDFAF4;
+  --popover-foreground: #2C2218;
 
-  /* Dusty mauve / terracotta primary */
-  --primary: oklch(0.55 0.10 25);
-  --primary-foreground: oklch(0.98 0.01 80);
+  /* Aged leather terracotta-brown */
+  --primary: #8B5E52;
+  --primary-foreground: #FDFAF4;
 
-  --secondary: oklch(0.94 0.018 60);
-  --secondary-foreground: oklch(0.30 0.025 40);
+  --secondary: #F0E8D8;
+  --secondary-foreground: #6B4840;
 
-  --muted: oklch(0.93 0.012 70);
-  --muted-foreground: oklch(0.50 0.02 50);
+  --muted: #EFE7D7;
+  --muted-foreground: #8C7B6E;
 
-  --accent: oklch(0.92 0.025 55);
-  --accent-foreground: oklch(0.30 0.03 40);
+  --accent: #E8DEC9;
+  --accent-foreground: #2C2218;
 
-  /* Soft gold */
-  --gold: oklch(0.78 0.12 80);
-  --gold-foreground: oklch(0.30 0.05 60);
+  /* Antique gold */
+  --gold: #C9A96E;
+  --gold-foreground: #2C2218;
 
-  --success: oklch(0.70 0.10 150);
-  --warning: oklch(0.80 0.13 75);
-  --destructive: oklch(0.60 0.14 25);
-  --destructive-foreground: oklch(0.98 0.01 80);
+  --success: #5C7A5C;
+  --warning: #A07840;
+  --destructive: #8B4040;
+  --destructive-foreground: #FDFAF4;
 
-  --border: oklch(0.89 0.015 70);
-  --input: oklch(0.92 0.012 70);
-  --ring: oklch(0.55 0.10 25);
+  --border: #E2D5C3;
+  --input: #E2D5C3;
+  --ring: #8B5E52;
 }
 
 @layer base {
@@ -99,7 +100,8 @@
   h1, h2, h3, h4, h5 {
     font-family: var(--font-serif);
     font-weight: 500;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
+    color: var(--foreground);
   }
 }
 
@@ -109,19 +111,24 @@
   .shadow-soft { box-shadow: var(--shadow-soft); }
   .shadow-lift { box-shadow: var(--shadow-lift); }
 
+  /* Subtle warm radial — parchment with a barely-there glow */
   .bg-warm-gradient {
     background-image:
-      radial-gradient(at 20% 10%, oklch(0.92 0.05 55) 0, transparent 55%),
-      radial-gradient(at 80% 0%, oklch(0.88 0.06 30) 0, transparent 50%),
-      radial-gradient(at 50% 100%, oklch(0.90 0.04 80) 0, transparent 60%);
+      radial-gradient(at 50% 0%, #F0E6D0 0, transparent 60%),
+      radial-gradient(at 100% 100%, #EDE0C8 0, transparent 55%),
+      linear-gradient(180deg, #F2EAD8, #EDE0C8);
   }
+
+  /* Aged leather — for primary buttons and rich dark sections */
   .bg-mauve-gradient {
-    background-image: linear-gradient(135deg, oklch(0.55 0.10 25), oklch(0.45 0.08 15));
+    background-image: linear-gradient(135deg, #8B5E52, #5C3D35);
   }
-  .bg-pet-1 { background-image: linear-gradient(135deg, oklch(0.85 0.07 40), oklch(0.78 0.09 20)); }
-  .bg-pet-2 { background-image: linear-gradient(135deg, oklch(0.88 0.06 80), oklch(0.80 0.10 50)); }
-  .bg-pet-3 { background-image: linear-gradient(135deg, oklch(0.86 0.05 30), oklch(0.74 0.09 10)); }
-  .bg-pet-4 { background-image: linear-gradient(135deg, oklch(0.88 0.05 100), oklch(0.78 0.10 70)); }
-  .bg-pet-5 { background-image: linear-gradient(135deg, oklch(0.84 0.06 50), oklch(0.72 0.10 25)); }
-  .bg-pet-6 { background-image: linear-gradient(135deg, oklch(0.90 0.04 60), oklch(0.80 0.08 35)); }
+
+  /* Parchment card image placeholders — muted, never colorful */
+  .bg-pet-1 { background-image: linear-gradient(135deg, #EDE4D4, #DDD0BC); }
+  .bg-pet-2 { background-image: linear-gradient(135deg, #E4D8C4, #C9B99A); }
+  .bg-pet-3 { background-image: linear-gradient(135deg, #DDD0BC, #C0AE8E); }
+  .bg-pet-4 { background-image: linear-gradient(135deg, #E8DEC9, #D4C5A9); }
+  .bg-pet-5 { background-image: linear-gradient(135deg, #D4C5A9, #B8A584); }
+  .bg-pet-6 { background-image: linear-gradient(135deg, #EDE4D4, #C9B99A); }
 }

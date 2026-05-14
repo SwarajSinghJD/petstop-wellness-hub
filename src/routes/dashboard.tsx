@@ -48,7 +48,7 @@ function DashboardPage() {
         <p className="text-sm uppercase tracking-wider text-primary">Welcome back</p>
         <h1 className="mt-2 font-serif text-5xl md:text-6xl">Hello, Amelia.</h1>
 
-        <div className="mt-10 rounded-[2rem] bg-card border border-border/60 shadow-soft p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
+        <div className="mt-10 rounded-3xl bg-card border border-border shadow-soft p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
           <div className="h-32 w-32 md:h-36 md:w-36 rounded-full bg-pet-1 shadow-lift shrink-0 grid place-items-center font-serif text-5xl text-foreground/70">
             B
           </div>
@@ -69,7 +69,7 @@ function DashboardPage() {
               ))}
             </div>
           </div>
-          <button className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-sm hover:bg-secondary transition-colors">
+          <button className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-[1.5px] border-primary text-primary text-sm hover:bg-primary/10 transition-colors">
             <Edit3 size={14} /> Edit Profile
           </button>
         </div>
@@ -80,12 +80,10 @@ function DashboardPage() {
           {overview.map(({ icon: Icon, label, value, tone }) => (
             <div key={label} className="rounded-3xl bg-card border border-border/60 shadow-soft p-6 hover:shadow-lift transition-all duration-300">
               <span
-                className={`grid place-items-center h-11 w-11 rounded-2xl ${
-                  tone === "warning" ? "bg-warning/20 text-warning" : "bg-success/20 text-success"
-                }`}
+                className="grid place-items-center h-11 w-11 rounded-xl"
                 style={{
-                  backgroundColor: tone === "warning" ? "oklch(0.80 0.13 75 / 0.18)" : "oklch(0.70 0.10 150 / 0.18)",
-                  color: tone === "warning" ? "oklch(0.45 0.13 65)" : "oklch(0.40 0.10 150)",
+                  backgroundColor: tone === "warning" ? "#F5ECD8" : "#E8F0E8",
+                  color: tone === "warning" ? "#A07840" : "#5C7A5C",
                 }}
               >
                 <Icon size={18} />
@@ -122,7 +120,7 @@ function DashboardPage() {
                     <div className="font-medium text-foreground">{r.title}</div>
                     <div className="text-xs text-muted-foreground mt-0.5">{r.date}</div>
                   </div>
-                  <button className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-foreground text-background text-xs hover:opacity-90 transition-opacity">
+                  <button className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-primary text-primary-foreground text-xs hover:opacity-90 transition-opacity">
                     <CheckCircle2 size={14} /> Done
                   </button>
                 </div>
@@ -162,8 +160,8 @@ function DashboardPage() {
         <h3 className="font-serif text-2xl mt-16 mb-6">Quick actions</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {actions.map(({ icon: Icon, label }) => (
-            <button key={label} className="group rounded-3xl bg-card border border-border/60 shadow-soft p-6 text-left hover:shadow-lift hover:-translate-y-1 transition-all duration-300">
-              <span className="grid place-items-center h-12 w-12 rounded-2xl bg-mauve-gradient text-primary-foreground">
+            <button key={label} className="group rounded-3xl bg-card border border-border shadow-soft p-6 text-left hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300">
+              <span className="grid place-items-center h-12 w-12 rounded-xl bg-mauve-gradient text-primary-foreground">
                 <Icon size={20} />
               </span>
               <div className="mt-5 font-serif text-xl">{label}</div>
