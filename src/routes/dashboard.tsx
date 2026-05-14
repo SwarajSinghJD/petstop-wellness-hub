@@ -48,7 +48,7 @@ function DashboardPage() {
         <p className="text-sm uppercase tracking-wider text-primary">Welcome back</p>
         <h1 className="mt-2 font-serif text-5xl md:text-6xl">Hello, Amelia.</h1>
 
-        <div className="mt-10 rounded-[2rem] bg-card border border-border/60 shadow-soft p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
+        <div className="mt-10 rounded-3xl bg-card border border-border shadow-soft p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
           <div className="h-32 w-32 md:h-36 md:w-36 rounded-full bg-pet-1 shadow-lift shrink-0 grid place-items-center font-serif text-5xl text-foreground/70">
             B
           </div>
@@ -69,7 +69,7 @@ function DashboardPage() {
               ))}
             </div>
           </div>
-          <button className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-sm hover:bg-secondary transition-colors">
+          <button className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-[1.5px] border-primary text-primary text-sm hover:bg-primary/10 transition-colors">
             <Edit3 size={14} /> Edit Profile
           </button>
         </div>
