@@ -40,25 +40,25 @@ function HomePage() {
         />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-20 pb-28 lg:pt-28 lg:pb-36">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-background/70 backdrop-blur border border-border/60 text-xs tracking-wide uppercase text-muted-foreground">
+            <Reveal as="span" delay={0} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-background/70 backdrop-blur border border-border/60 text-xs tracking-wide uppercase text-muted-foreground">
               <Sparkles size={14} className="text-primary" /> AI-powered pet care, made human
-            </span>
-            <h1 className="mt-6 font-serif leading-[1.05] text-foreground" style={{ fontSize: "clamp(3rem, 6vw, 5rem)" }}>
+            </Reveal>
+            <Reveal as="h1" delay={100} className="mt-6 font-serif leading-[1.05] text-foreground" style={{ fontSize: "clamp(3rem, 6vw, 5rem)" }}>
               Everything your pet<br />deserves, in one place.
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            </Reveal>
+            <Reveal as="p" delay={200} className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               PetStop helps you find verified vets, breeders, shelters and groomers — and keeps your
               pet's health journal beautifully organized.
-            </p>
+            </Reveal>
 
             {/* Search bar */}
-            <div className="mt-10 mx-auto max-w-2xl bg-card border border-border/60 rounded-3xl shadow-lift p-2 flex flex-col md:flex-row items-stretch gap-2">
-              <div className="flex items-center gap-3 px-4 py-3 flex-1 rounded-2xl hover:bg-secondary/60 transition-colors">
+            <Reveal delay={300} className="mt-10 mx-auto max-w-2xl bg-card border border-border/60 rounded-3xl shadow-lift p-2 flex flex-col md:flex-row items-stretch gap-2">
+              <div className="flex items-center gap-3 px-4 py-3 flex-1 rounded-2xl hover:bg-secondary/60 premium-ease">
                 <MapPin size={18} className="text-primary shrink-0" />
                 <input placeholder="City or neighborhood" className="bg-transparent outline-none flex-1 text-sm placeholder:text-muted-foreground" />
               </div>
               <div className="hidden md:block w-px bg-border my-2" />
-              <div className="flex items-center gap-3 px-4 py-3 flex-1 rounded-2xl hover:bg-secondary/60 transition-colors">
+              <div className="flex items-center gap-3 px-4 py-3 flex-1 rounded-2xl hover:bg-secondary/60 premium-ease">
                 <Stethoscope size={18} className="text-primary shrink-0" />
                 <select className="bg-transparent outline-none flex-1 text-sm text-muted-foreground">
                   <option>Any service</option>
@@ -66,19 +66,19 @@ function HomePage() {
                   <option>Groomer</option><option>Pet Shop</option>
                 </select>
               </div>
-              <button className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
+              <button className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground premium-ease hover:opacity-[0.88]">
                 <Search size={16} /> Search
               </button>
-            </div>
+            </Reveal>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <Link to="/listings" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
+            <Reveal delay={400} className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              <Link to="/listings" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground premium-ease hover:opacity-[0.88]">
                 <Stethoscope size={16} /> Find a Vet
               </Link>
-              <Link to="/dashboard" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-[1.5px] border-primary text-primary hover:bg-primary/10 transition-colors">
+              <Link to="/dashboard" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-[1.5px] border-primary text-primary hover:bg-primary/10 premium-ease">
                 <PawPrint size={16} /> Add Your Pet
               </Link>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -89,26 +89,26 @@ function HomePage() {
           className="rounded-3xl border border-border/40 shadow-lift px-6 md:px-10 py-7 grid grid-cols-2 md:grid-cols-4 gap-6"
           style={{ background: "#2C2218", color: "#F5F0E8" }}
         >
-          {stats.map(({ icon: Icon, label }) => (
-            <div key={label} className="flex items-center gap-3">
+          {stats.map(({ icon: Icon, label }, i) => (
+            <Reveal key={label} delay={i * 100} className="flex items-center gap-3">
               <span className="grid place-items-center h-10 w-10 rounded-2xl" style={{ background: "#C9A96E20", color: "#C9A96E" }}>
                 <Icon size={18} />
               </span>
               <span className="text-sm font-medium" style={{ color: "#F5F0E8" }}>{label}</span>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
 
       {/* How it works */}
       <section className="mx-auto max-w-7xl px-6 lg:px-10 py-28">
-        <div className="max-w-2xl">
+        <Reveal className="max-w-2xl">
           <p className="text-sm uppercase tracking-wider text-primary">How it works</p>
           <h2 className="mt-3 font-serif text-4xl md:text-5xl">Care in three calm steps.</h2>
-        </div>
+        </Reveal>
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {steps.map(({ icon: Icon, title, text }, i) => (
-            <div key={title} className="rounded-3xl bg-card border border-border/60 shadow-soft p-8 hover:shadow-lift hover:-translate-y-1 transition-all duration-300">
+            <Reveal key={title} delay={i * 100} className="rounded-3xl bg-card border border-border/60 shadow-soft p-8 hover:shadow-lift hover:-translate-y-[3px] premium-ease">
               <div className="flex items-center justify-between">
                 <span className="grid place-items-center h-12 w-12 rounded-2xl bg-mauve-gradient text-primary-foreground">
                   <Icon size={20} />
@@ -117,7 +117,7 @@ function HomePage() {
               </div>
               <h3 className="mt-6 font-serif text-2xl">{title}</h3>
               <p className="mt-3 text-muted-foreground leading-relaxed">{text}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -125,20 +125,20 @@ function HomePage() {
       {/* Featured listings */}
       <section className="py-20" style={{ background: "#EDE4D4" }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="flex items-end justify-between gap-6">
+          <Reveal className="flex items-end justify-between gap-6">
             <div>
               <p className="text-sm uppercase tracking-wider text-primary">Featured nearby</p>
               <h2 className="mt-3 font-serif text-4xl md:text-5xl">Loved by pet parents.</h2>
             </div>
-            <Link to="/listings" className="hidden sm:inline-flex items-center gap-2 text-sm text-foreground hover:text-primary transition-colors">
+            <Link to="/listings" className="hidden sm:inline-flex items-center gap-2 text-sm text-foreground hover:text-primary premium-ease">
               See all listings <ArrowRight size={16} />
             </Link>
-          </div>
+          </Reveal>
           <div className="mt-12 flex gap-6 overflow-x-auto pb-6 -mx-6 px-6 snap-x">
-            {listings.slice(0, 6).map((l) => (
-              <div key={l.id} className="min-w-[320px] max-w-[340px] snap-start">
+            {listings.slice(0, 6).map((l, i) => (
+              <Reveal key={l.id} delay={i * 100} className="min-w-[320px] max-w-[340px] snap-start">
                 <ListingCard listing={l} />
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -150,24 +150,24 @@ function HomePage() {
           <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gold/20 blur-3xl" />
           <div className="absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-gold/15 blur-3xl" />
           <div className="relative max-w-2xl">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-background/15 backdrop-blur text-xs tracking-wide uppercase border" style={{ borderColor: "#C9A96E" }}>
+            <Reveal as="span" delay={0} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-background/15 backdrop-blur text-xs tracking-wide uppercase border" style={{ borderColor: "#C9A96E" }}>
               <Sparkles size={14} style={{ color: "#C9A96E" }} /> New · AI Pet Assistant
-            </span>
-            <h2 className="mt-6 font-serif text-4xl md:text-6xl leading-tight text-primary-foreground">
+            </Reveal>
+            <Reveal as="h2" delay={100} className="mt-6 font-serif text-4xl md:text-6xl leading-tight text-primary-foreground">
               Meet your pet's personal AI companion.
-            </h2>
-            <p className="mt-5 text-primary-foreground/85 text-lg leading-relaxed">
+            </Reveal>
+            <Reveal as="p" delay={200} className="mt-5 text-primary-foreground/85 text-lg leading-relaxed">
               Ask anything — symptoms at 2am, food brand comparisons, training tips. Trained on
               veterinary literature and gentle enough to talk to.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/assistant" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-background text-foreground hover:bg-background/90 transition-colors">
+            </Reveal>
+            <Reveal delay={300} className="mt-8 flex flex-wrap gap-3">
+              <Link to="/assistant" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-background text-foreground premium-ease hover:opacity-[0.88]">
                 <Sparkles size={16} /> Try the Assistant
               </Link>
-              <Link to="/emergency" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-background/10 backdrop-blur border border-background/20 hover:bg-background/20 transition-colors">
+              <Link to="/emergency" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-background/10 backdrop-blur border border-background/20 hover:bg-background/20 premium-ease">
                 <Clock size={16} /> 24/7 Emergency
               </Link>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
