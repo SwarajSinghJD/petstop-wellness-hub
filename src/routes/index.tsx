@@ -31,14 +31,18 @@ function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-warm-gradient opacity-90" />
+      <section className="relative overflow-hidden bg-warm-gradient">
+        <div
+          aria-hidden
+          className="absolute pointer-events-none rounded-full"
+          style={{ width: 500, height: 500, top: -100, right: -100, background: "#8B5E5212" }}
+        />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-20 pb-28 lg:pt-28 lg:pb-36">
           <div className="max-w-3xl mx-auto text-center">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-background/70 backdrop-blur border border-border/60 text-xs tracking-wide uppercase text-muted-foreground">
               <Sparkles size={14} className="text-primary" /> AI-powered pet care, made human
             </span>
-            <h1 className="mt-6 font-serif text-5xl md:text-7xl leading-[1.05] text-foreground">
+            <h1 className="mt-6 font-serif leading-[1.05] text-foreground" style={{ fontSize: "clamp(3rem, 6vw, 5rem)" }}>
               Everything your pet<br />deserves, in one place.
             </h1>
             <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
