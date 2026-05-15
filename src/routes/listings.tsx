@@ -86,7 +86,7 @@ function ListingsPage() {
                 {filterTypes.map((t) => <option key={t} value={t}>{t}</option>)}
               </select>
             </div>
-            <button className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
+            <button className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground premium-ease hover:opacity-[0.88]">
               <Search size={16} /> Search
             </button>
           </div>
