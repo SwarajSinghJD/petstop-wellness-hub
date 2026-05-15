@@ -3,13 +3,13 @@ import type { Listing } from "@/lib/petstop-data";
 
 export function ListingCard({ listing }: { listing: Listing }) {
   return (
-    <article className="group rounded-3xl bg-card border border-border/60 shadow-soft hover:shadow-lift hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col">
+    <article className="group rounded-3xl bg-card border border-border/60 border-l-[3px] border-l-transparent shadow-soft hover:shadow-lift hover:-translate-y-1 hover:border-l-primary transition-all duration-300 overflow-hidden flex flex-col">
       <div className={`relative h-48 ${listing.gradient}`}>
         <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-background/85 backdrop-blur text-xs font-medium text-foreground">
           {listing.type}
         </span>
         {listing.verified && (
-          <span className="absolute top-4 right-4 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gold/95 text-gold-foreground text-xs font-medium shadow-soft">
+          <span className="absolute top-4 right-4 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium shadow-soft" style={{ background: "#C9A96E", color: "#2C2218" }}>
             <BadgeCheck size={14} /> Verified
           </span>
         )}

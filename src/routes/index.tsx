@@ -31,14 +31,18 @@ function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-warm-gradient opacity-90" />
+      <section className="relative overflow-hidden bg-warm-gradient">
+        <div
+          aria-hidden
+          className="absolute pointer-events-none rounded-full"
+          style={{ width: 500, height: 500, top: -100, right: -100, background: "#8B5E5212" }}
+        />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-20 pb-28 lg:pt-28 lg:pb-36">
           <div className="max-w-3xl mx-auto text-center">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-background/70 backdrop-blur border border-border/60 text-xs tracking-wide uppercase text-muted-foreground">
               <Sparkles size={14} className="text-primary" /> AI-powered pet care, made human
             </span>
-            <h1 className="mt-6 font-serif text-5xl md:text-7xl leading-[1.05] text-foreground">
+            <h1 className="mt-6 font-serif leading-[1.05] text-foreground" style={{ fontSize: "clamp(3rem, 6vw, 5rem)" }}>
               Everything your pet<br />deserves, in one place.
             </h1>
             <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -80,13 +84,16 @@ function HomePage() {
 
       {/* Trust bar */}
       <section className="mx-auto max-w-7xl px-6 lg:px-10 -mt-10 relative">
-        <div className="rounded-3xl bg-card border border-border/60 shadow-soft px-6 md:px-10 py-6 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div
+          className="rounded-3xl border border-border/40 shadow-lift px-6 md:px-10 py-7 grid grid-cols-2 md:grid-cols-4 gap-6"
+          style={{ background: "#2C2218", color: "#F5F0E8" }}
+        >
           {stats.map(({ icon: Icon, label }) => (
             <div key={label} className="flex items-center gap-3">
-              <span className="grid place-items-center h-10 w-10 rounded-2xl bg-secondary text-primary">
+              <span className="grid place-items-center h-10 w-10 rounded-2xl" style={{ background: "#C9A96E20", color: "#C9A96E" }}>
                 <Icon size={18} />
               </span>
-              <span className="text-sm font-medium text-foreground">{label}</span>
+              <span className="text-sm font-medium" style={{ color: "#F5F0E8" }}>{label}</span>
             </div>
           ))}
         </div>
@@ -115,7 +122,7 @@ function HomePage() {
       </section>
 
       {/* Featured listings */}
-      <section className="py-20 bg-secondary/40">
+      <section className="py-20" style={{ background: "#EDE4D4" }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="flex items-end justify-between gap-6">
             <div>
@@ -142,8 +149,8 @@ function HomePage() {
           <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gold/20 blur-3xl" />
           <div className="absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-gold/15 blur-3xl" />
           <div className="relative max-w-2xl">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-background/15 backdrop-blur text-xs tracking-wide uppercase">
-              <Sparkles size={14} /> New · AI Pet Assistant
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-background/15 backdrop-blur text-xs tracking-wide uppercase border" style={{ borderColor: "#C9A96E" }}>
+              <Sparkles size={14} style={{ color: "#C9A96E" }} /> New · AI Pet Assistant
             </span>
             <h2 className="mt-6 font-serif text-4xl md:text-6xl leading-tight text-primary-foreground">
               Meet your pet's personal AI companion.

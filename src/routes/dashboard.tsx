@@ -49,7 +49,13 @@ function DashboardPage() {
         <h1 className="mt-2 font-serif text-5xl md:text-6xl">Hello, Amelia.</h1>
 
         <div className="mt-10 rounded-3xl bg-card border border-border shadow-soft p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
-          <div className="h-32 w-32 md:h-36 md:w-36 rounded-full bg-pet-1 shadow-lift shrink-0 grid place-items-center font-serif text-5xl text-foreground/70">
+          <div
+            className="h-32 w-32 md:h-36 md:w-36 rounded-full shrink-0 grid place-items-center font-serif text-5xl text-white"
+            style={{
+              background: "linear-gradient(135deg, #8B5E52, #C9A96E)",
+              boxShadow: "0 0 0 3px #F5F0E8, 0 0 0 5px #C9A96E50",
+            }}
+          >
             B
           </div>
           <div className="flex-1 text-center md:text-left">

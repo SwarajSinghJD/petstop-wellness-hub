@@ -45,23 +45,23 @@ export function SiteNav() {
 
 export function SiteFooter() {
   return (
-    <footer className="mt-32 border-t border-border/60 bg-secondary/40">
+    <footer className="mt-32 border-t border-border/60" style={{ background: "#2C2218", color: "#F5F0E8" }}>
       <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16 grid gap-10 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2.5">
-            <span className="grid place-items-center h-10 w-10 rounded-2xl bg-mauve-gradient text-primary-foreground">
+            <span className="grid place-items-center h-10 w-10 rounded-xl bg-mauve-gradient text-primary-foreground">
               <PawPrint size={20} />
             </span>
-            <span className="font-serif text-2xl">PetStop</span>
+            <span className="font-serif text-2xl" style={{ color: "#F5F0E8" }}>PetStop</span>
           </div>
-          <p className="mt-4 max-w-md text-muted-foreground leading-relaxed">
+          <p className="mt-4 max-w-md leading-relaxed" style={{ color: "#F5F0E8AA" }}>
             A warm, AI-powered home for everything your pet needs — verified vets, breeders,
             shelters, groomers and a personal health journal.
           </p>
         </div>
         <div>
-          <h4 className="font-serif text-lg mb-4">Explore</h4>
-          <ul className="space-y-2 text-sm text-muted-foreground">
+          <h4 className="font-serif text-lg mb-4" style={{ color: "#C9A96E" }}>Explore</h4>
+          <ul className="space-y-2 text-sm" style={{ color: "#F5F0E8AA" }}>
             <li><Link to="/listings">Listings</Link></li>
             <li><Link to="/dashboard">My Pet</Link></li>
             <li><Link to="/emergency">Emergency</Link></li>
@@ -69,14 +69,14 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <h4 className="font-serif text-lg mb-4">Connect</h4>
-          <ul className="space-y-2 text-sm text-muted-foreground">
+          <h4 className="font-serif text-lg mb-4" style={{ color: "#C9A96E" }}>Connect</h4>
+          <ul className="space-y-2 text-sm" style={{ color: "#F5F0E8AA" }}>
             <li>hello@petstop.care</li>
             <li>Instagram · TikTok · X</li>
           </ul>
         </div>
       </div>
-      <div className="border-t border-border/60 py-6 text-center text-sm text-muted-foreground">
+      <div className="border-t py-6 text-center text-sm" style={{ borderColor: "#F5F0E822", color: "#F5F0E899" }}>
         Made with love for pet parents everywhere.
       </div>
     </footer>

@@ -100,7 +100,7 @@
   h1, h2, h3, h4, h5 {
     font-family: var(--font-serif);
     font-weight: 500;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     color: var(--foreground);
   }
 }
@@ -111,12 +111,9 @@
   .shadow-soft { box-shadow: var(--shadow-soft); }
   .shadow-lift { box-shadow: var(--shadow-lift); }
 
-  /* Subtle warm radial — parchment with a barely-there glow */
+  /* Rich warm hero — primary at low opacity over parchment */
   .bg-warm-gradient {
-    background-image:
-      radial-gradient(at 50% 0%, #F0E6D0 0, transparent 60%),
-      radial-gradient(at 100% 100%, #EDE0C8 0, transparent 55%),
-      linear-gradient(180deg, #F2EAD8, #EDE0C8);
+    background-image: linear-gradient(160deg, #F0E6D8 0%, #E8D5C0 50%, #F2EAD8 100%);
   }
 
   /* Aged leather — for primary buttons and rich dark sections */
@@ -124,11 +121,11 @@
     background-image: linear-gradient(135deg, #8B5E52, #5C3D35);
   }
 
-  /* Parchment card image placeholders — muted, never colorful */
-  .bg-pet-1 { background-image: linear-gradient(135deg, #EDE4D4, #DDD0BC); }
-  .bg-pet-2 { background-image: linear-gradient(135deg, #E4D8C4, #C9B99A); }
-  .bg-pet-3 { background-image: linear-gradient(135deg, #DDD0BC, #C0AE8E); }
-  .bg-pet-4 { background-image: linear-gradient(135deg, #E8DEC9, #D4C5A9); }
-  .bg-pet-5 { background-image: linear-gradient(135deg, #D4C5A9, #B8A584); }
-  .bg-pet-6 { background-image: linear-gradient(135deg, #EDE4D4, #C9B99A); }
+  /* Parchment card image placeholders — muted but visible & distinguishable */
+  .bg-pet-1 { background-image: linear-gradient(135deg, #C9A96E40, #8B5E5230); }
+  .bg-pet-2 { background-image: linear-gradient(135deg, #7A8C7030, #5C7A5C20); }
+  .bg-pet-3 { background-image: linear-gradient(135deg, #8B5E5225, #A0522D20); }
+  .bg-pet-4 { background-image: linear-gradient(135deg, #C9A96E35, #A0784025); }
+  .bg-pet-5 { background-image: linear-gradient(135deg, #7A8C7025, #C9A96E30); }
+  .bg-pet-6 { background-image: linear-gradient(135deg, #8B5E5230, #C9A96E35); }
 }
