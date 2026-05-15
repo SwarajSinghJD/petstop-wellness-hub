@@ -84,13 +84,16 @@ function HomePage() {
 
       {/* Trust bar */}
       <section className="mx-auto max-w-7xl px-6 lg:px-10 -mt-10 relative">
-        <div className="rounded-3xl bg-card border border-border/60 shadow-soft px-6 md:px-10 py-6 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div
+          className="rounded-3xl border border-border/40 shadow-lift px-6 md:px-10 py-7 grid grid-cols-2 md:grid-cols-4 gap-6"
+          style={{ background: "#2C2218", color: "#F5F0E8" }}
+        >
           {stats.map(({ icon: Icon, label }) => (
             <div key={label} className="flex items-center gap-3">
-              <span className="grid place-items-center h-10 w-10 rounded-2xl bg-secondary text-primary">
+              <span className="grid place-items-center h-10 w-10 rounded-2xl" style={{ background: "#C9A96E20", color: "#C9A96E" }}>
                 <Icon size={18} />
               </span>
-              <span className="text-sm font-medium text-foreground">{label}</span>
+              <span className="text-sm font-medium" style={{ color: "#F5F0E8" }}>{label}</span>
             </div>
           ))}
         </div>
