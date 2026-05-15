@@ -3,7 +3,7 @@ import type { Listing } from "@/lib/petstop-data";
 
 export function ListingCard({ listing }: { listing: Listing }) {
   return (
-    <article className="group rounded-3xl bg-card border border-border/60 border-l-[3px] border-l-transparent shadow-soft hover:shadow-lift hover:-translate-y-1 hover:border-l-primary transition-all duration-300 overflow-hidden flex flex-col">
+    <article className="group rounded-3xl bg-card border border-border/60 border-l-[3px] border-l-transparent shadow-soft hover:shadow-lift hover:-translate-y-[3px] hover:border-l-primary premium-ease overflow-hidden flex flex-col">
       <div className={`relative h-48 ${listing.gradient}`}>
         <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-background/85 backdrop-blur text-xs font-medium text-foreground">
           {listing.type}
@@ -28,12 +28,12 @@ export function ListingCard({ listing }: { listing: Listing }) {
         </div>
         <p className="text-sm text-muted-foreground leading-relaxed flex-1">{listing.description}</p>
         <div className="flex items-center gap-2 pt-3">
-          <button className="flex-1 px-4 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm hover:opacity-90 transition-opacity">
+          <button className="flex-1 px-4 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm premium-ease hover:opacity-[0.88]">
             View Details
           </button>
           <button
             aria-label="Save"
-            className="grid place-items-center h-10 w-10 rounded-lg border border-border hover:bg-secondary text-muted-foreground hover:text-primary transition-colors"
+            className="grid place-items-center h-10 w-10 rounded-lg border border-border hover:bg-secondary text-muted-foreground hover:text-primary premium-ease"
           >
             <Heart size={16} />
           </button>
