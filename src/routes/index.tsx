@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Search, MapPin, Stethoscope, PawPrint, ShieldCheck, Star, Sparkles, Phone, ArrowRight, Heart, BadgeCheck, Users, Clock } from "lucide-react";
 import { ListingCard } from "@/components/ListingCard";
 import { SiteFooter } from "@/components/SiteNav";
+import { Reveal } from "@/components/Reveal";
 import { listings } from "@/lib/petstop-data";
 
 export const Route = createFileRoute("/")({
