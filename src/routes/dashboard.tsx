@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Syringe, Stethoscope, Scale, Pill, Bell, Plus, Sparkles, ClipboardList, Edit3, CheckCircle2, AlertTriangle } from "lucide-react";
 import { SiteFooter } from "@/components/SiteNav";
+import { Reveal } from "@/components/Reveal";
 
 export const Route = createFileRoute("/dashboard")({
   head: () => ({
@@ -81,10 +82,10 @@ function DashboardPage() {
         </div>
 
         {/* Health overview */}
-        <h3 className="font-serif text-2xl mt-16 mb-6">Health overview</h3>
+        <Reveal as="h3" className="font-serif text-2xl mt-16 mb-6">Health overview</Reveal>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-          {overview.map(({ icon: Icon, label, value, tone }) => (
-            <div key={label} className="rounded-3xl bg-card border border-border/60 shadow-soft p-6 hover:shadow-lift transition-all duration-300">
+          {overview.map(({ icon: Icon, label, value, tone }, i) => (
+            <Reveal key={label} delay={i * 100} className="rounded-3xl bg-card border border-border/60 shadow-soft p-6 hover:shadow-lift hover:-translate-y-[3px] premium-ease">
               <span
                 className="grid place-items-center h-11 w-11 rounded-xl"
                 style={{
@@ -96,24 +97,25 @@ function DashboardPage() {
               </span>
               <div className="mt-5 font-serif text-3xl">{value}</div>
               <div className="text-sm text-muted-foreground">{label}</div>
-            </div>
+            </Reveal>
           ))}
         </div>
 
         {/* Two columns: reminders + records */}
         <div className="mt-16 grid lg:grid-cols-2 gap-8">
           <div>
-            <div className="flex items-center justify-between mb-6">
+            <Reveal className="flex items-center justify-between mb-6">
               <h3 className="font-serif text-2xl">Upcoming reminders</h3>
-              <button className="text-sm text-primary hover:opacity-80 inline-flex items-center gap-1">
+              <button className="text-sm text-primary premium-ease hover:opacity-[0.88] inline-flex items-center gap-1">
                 <Plus size={14} /> New
               </button>
-            </div>
+            </Reveal>
             <div className="space-y-3">
-              {reminders.map((r) => (
-                <div
+              {reminders.map((r, i) => (
+                <Reveal
                   key={r.title}
-                  className={`flex items-center gap-4 p-5 rounded-2xl border transition-colors ${
+                  delay={i * 100}
+                  className={`flex items-center gap-4 p-5 rounded-2xl border premium-ease ${
                     r.overdue
                       ? "bg-destructive/5 border-destructive/20"
                       : "bg-card border-border/60 hover:border-border"
@@ -126,19 +128,19 @@ function DashboardPage() {
                     <div className="font-medium text-foreground">{r.title}</div>
                     <div className="text-xs text-muted-foreground mt-0.5">{r.date}</div>
                   </div>
-                  <button className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-primary text-primary-foreground text-xs hover:opacity-90 transition-opacity">
+                  <button className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-primary text-primary-foreground text-xs premium-ease hover:opacity-[0.88]">
                     <CheckCircle2 size={14} /> Done
                   </button>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
 
           <div>
-            <div className="flex items-center justify-between mb-6">
+            <Reveal className="flex items-center justify-between mb-6">
               <h3 className="font-serif text-2xl">Pet records</h3>
-              <button className="text-sm text-primary hover:opacity-80">View all</button>
-            </div>
+              <button className="text-sm text-primary premium-ease hover:opacity-[0.88]">View all</button>
+            </Reveal>
             <div className="rounded-3xl bg-card border border-border/60 shadow-soft overflow-hidden">
               <table className="w-full text-sm">
                 <thead className="bg-secondary/60 text-muted-foreground">
@@ -163,16 +165,18 @@ function DashboardPage() {
         </div>
 
         {/* Quick actions */}
-        <h3 className="font-serif text-2xl mt-16 mb-6">Quick actions</h3>
+        <Reveal as="h3" className="font-serif text-2xl mt-16 mb-6">Quick actions</Reveal>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {actions.map(({ icon: Icon, label }) => (
-            <button key={label} className="group rounded-3xl bg-card border border-border shadow-soft p-6 text-left hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300">
-              <span className="grid place-items-center h-12 w-12 rounded-xl bg-mauve-gradient text-primary-foreground">
-                <Icon size={20} />
-              </span>
-              <div className="mt-5 font-serif text-xl">{label}</div>
-              <div className="text-xs text-muted-foreground mt-1">Tap to begin →</div>
-            </button>
+          {actions.map(({ icon: Icon, label }, i) => (
+            <Reveal key={label} delay={i * 100}>
+              <button className="group w-full rounded-3xl bg-card border border-border shadow-soft p-6 text-left hover:shadow-lift hover:-translate-y-[3px] premium-ease">
+                <span className="grid place-items-center h-12 w-12 rounded-xl bg-mauve-gradient text-primary-foreground">
+                  <Icon size={20} />
+                </span>
+                <div className="mt-5 font-serif text-xl">{label}</div>
+                <div className="text-xs text-muted-foreground mt-1">Tap to begin →</div>
+              </button>
+            </Reveal>
           ))}
         </div>
       </section>

@@ -14,7 +14,7 @@ export const Route = createFileRoute("/emergency")({
         <p className="mt-5 text-lg text-muted-foreground">
           Connect with a verified emergency vet near you in under a minute.
         </p>
-        <a href="tel:+18005550199" className="mt-10 inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
+        <a href="tel:+18005550199" className="mt-10 inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground premium-ease hover:opacity-[0.88]">
           <Phone size={16} /> Call Emergency Line
         </a>
       </section>

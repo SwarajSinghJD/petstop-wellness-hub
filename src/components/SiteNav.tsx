@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { PawPrint, Heart, Search, Sparkles, AlertCircle, Home } from "lucide-react";
 
 const links = [
@@ -10,10 +11,38 @@ const links = [
 ] as const;
 
 export function SiteNav() {
+  // Transparent at top, parchment-blur once scrolled past 20px.
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const scrolledStyle = scrolled
+    ? {
+        background: "#F5F0E8CC",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
+        borderBottom: "1px solid #E2D5C320",
+        boxShadow: "0 1px 20px rgba(44,34,24,0.06)",
+      }
+    : {
+        background: "transparent",
+        backdropFilter: "none",
+        WebkitBackdropFilter: "none",
+        borderBottom: "1px solid transparent",
+        boxShadow: "0 0 0 rgba(0,0,0,0)",
+      };
+
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-md bg-background/80 border-b border-border/60">
+    <header
+      className="sticky top-0 z-40"
+      style={{ ...scrolledStyle, transition: "all 0.4s cubic-bezier(0.22, 1, 0.36, 1)" }}
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5">
+        <Link to="/" className="flex items-center gap-2.5 premium-ease">
           <span className="grid place-items-center h-10 w-10 rounded-xl bg-mauve-gradient text-primary-foreground shadow-soft">
             <PawPrint size={20} />
           </span>
@@ -24,8 +53,8 @@ export function SiteNav() {
             <Link
               key={to}
               to={to}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 border-b border-transparent pb-1"
-              activeProps={{ className: "text-sm text-primary border-b border-primary pb-1" }}
+              className="text-sm text-muted-foreground hover:text-foreground premium-ease border-b border-transparent pb-1"
+              activeProps={{ className: "text-sm text-primary border-b border-primary pb-1 premium-ease" }}
               activeOptions={{ exact: to === "/" }}
             >
               {label}
@@ -34,7 +63,7 @@ export function SiteNav() {
         </nav>
         <Link
           to="/dashboard"
-          className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm hover:opacity-90 transition-opacity"
+          className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm premium-ease hover:opacity-[0.88]"
         >
           <PawPrint size={16} /> Add Your Pet
         </Link>
