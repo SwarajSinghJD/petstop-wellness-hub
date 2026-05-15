@@ -122,7 +122,7 @@ function HomePage() {
       </section>
 
       {/* Featured listings */}
-      <section className="py-20 bg-secondary/40">
+      <section className="py-20" style={{ background: "#EDE4D4" }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="flex items-end justify-between gap-6">
             <div>
