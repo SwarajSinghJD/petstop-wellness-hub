@@ -1,24 +1,19 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Search, MapPin, SlidersHorizontal, PawPrint } from "lucide-react";
 import { ListingCard } from "@/components/ListingCard";
 import { SiteFooter } from "@/components/SiteNav";
 import { listings, filterTypes, type ListingType } from "@/lib/petstop-data";
-
-export const Route = createFileRoute("/listings")({
-  head: () => ({
-    meta: [
-      { title: "Find Trusted Pet Services Near You — PetStop" },
-      { name: "description", content: "Browse verified vets, breeders, shelters, groomers and pet shops in your city." },
-    ],
-  }),
-  component: ListingsPage,
-});
+import { useDocTitle } from "@/lib/use-doc-title";
 
 const pillFilters = ["All", "Verified Only", "Top Rated", "Open Now", "Emergency Available"] as const;
 type Pill = (typeof pillFilters)[number];
 
-function ListingsPage() {
+export default function ListingsPage() {
+  useDocTitle(
+    "Find Trusted Pet Services Near You — PetStop",
+    "Browse verified vets, breeders, shelters, groomers and pet shops in your city.",
+  );
+
   const [pill, setPill] = useState<Pill>("All");
   const [types, setTypes] = useState<Set<ListingType>>(new Set());
   const [verifiedOnly, setVerifiedOnly] = useState(false);

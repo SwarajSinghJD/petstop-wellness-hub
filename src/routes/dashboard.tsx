@@ -1,17 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Syringe, Stethoscope, Scale, Pill, Bell, Plus, Sparkles, ClipboardList, Edit3, CheckCircle2, AlertTriangle } from "lucide-react";
 import { SiteFooter } from "@/components/SiteNav";
 import { Reveal } from "@/components/Reveal";
-
-export const Route = createFileRoute("/dashboard")({
-  head: () => ({
-    meta: [
-      { title: "My Pet — PetStop" },
-      { name: "description", content: "Your pet's beautifully organized health journal." },
-    ],
-  }),
-  component: DashboardPage,
-});
+import { useDocTitle } from "@/lib/use-doc-title";
 
 const overview = [
   { icon: Syringe, label: "Next Vaccination", value: "Mar 14", tone: "warning" as const },
@@ -41,11 +31,11 @@ const actions = [
   { icon: Sparkles, label: "Ask AI Assistant" },
 ];
 
-function DashboardPage() {
+export default function DashboardPage() {
+  useDocTitle("My Pet — PetStop", "Your pet's beautifully organized health journal.");
   return (
     <>
       <section className="mx-auto max-w-7xl px-6 lg:px-10 pt-12 pb-20">
-        {/* Greeting + pet card */}
         <p className="text-sm uppercase tracking-wider text-primary">Welcome back</p>
         <h1 className="mt-2 font-serif text-5xl md:text-6xl">Hello, Amelia.</h1>
 
@@ -81,7 +71,6 @@ function DashboardPage() {
           </button>
         </div>
 
-        {/* Health overview */}
         <Reveal as="h3" className="font-serif text-2xl mt-16 mb-6">Health overview</Reveal>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
           {overview.map(({ icon: Icon, label, value, tone }, i) => (
@@ -101,7 +90,6 @@ function DashboardPage() {
           ))}
         </div>
 
-        {/* Two columns: reminders + records */}
         <div className="mt-16 grid lg:grid-cols-2 gap-8">
           <div>
             <Reveal className="flex items-center justify-between mb-6">
@@ -164,7 +152,6 @@ function DashboardPage() {
           </div>
         </div>
 
-        {/* Quick actions */}
         <Reveal as="h3" className="font-serif text-2xl mt-16 mb-6">Quick actions</Reveal>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {actions.map(({ icon: Icon, label }, i) => (

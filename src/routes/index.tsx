@@ -1,19 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { Search, MapPin, Stethoscope, PawPrint, ShieldCheck, Star, Sparkles, Phone, ArrowRight, Heart, BadgeCheck, Users, Clock } from "lucide-react";
 import { ListingCard } from "@/components/ListingCard";
 import { SiteFooter } from "@/components/SiteNav";
 import { Reveal } from "@/components/Reveal";
 import { listings } from "@/lib/petstop-data";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "PetStop — Everything your pet deserves, in one place" },
-      { name: "description", content: "Find verified vets, breeders, shelters, groomers and pet shops, and manage your pet's health — all in one warm place." },
-    ],
-  }),
-  component: HomePage,
-});
+import { useDocTitle } from "@/lib/use-doc-title";
 
 const stats = [
   { icon: BadgeCheck, label: "500+ Verified Listings" },
@@ -28,7 +19,11 @@ const steps = [
   { icon: Heart, title: "Connect", text: "Book a visit, message a breeder or save a shelter pet. Care that feels personal, every step." },
 ];
 
-function HomePage() {
+export default function HomePage() {
+  useDocTitle(
+    "PetStop — Everything your pet deserves, in one place",
+    "Find verified vets, breeders, shelters, groomers and pet shops, and manage your pet's health — all in one warm place.",
+  );
   return (
     <>
       {/* Hero */}

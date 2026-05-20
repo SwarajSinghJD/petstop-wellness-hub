@@ -1,13 +1,13 @@
-import { Link } from "@tanstack/react-router";
+import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { PawPrint, Heart, Search, Sparkles, AlertCircle, Home } from "lucide-react";
 
 const links = [
-  { to: "/", label: "Home", icon: Home },
-  { to: "/listings", label: "Find Services", icon: Search },
-  { to: "/dashboard", label: "My Pet", icon: Heart },
-  { to: "/assistant", label: "AI Assistant", icon: Sparkles },
-  { to: "/emergency", label: "Emergency", icon: AlertCircle },
+  { to: "/", label: "Home", icon: Home, end: true },
+  { to: "/listings", label: "Find Services", icon: Search, end: false },
+  { to: "/dashboard", label: "My Pet", icon: Heart, end: false },
+  { to: "/assistant", label: "AI Assistant", icon: Sparkles, end: false },
+  { to: "/emergency", label: "Emergency", icon: AlertCircle, end: false },
 ] as const;
 
 export function SiteNav() {
@@ -49,16 +49,21 @@ export function SiteNav() {
           <span className="font-serif text-2xl tracking-tight text-foreground">PetStop</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6">
-          {links.map(({ to, label }) => (
-            <Link
+          {links.map(({ to, label, end }) => (
+            <NavLink
               key={to}
               to={to}
-              className="text-sm text-muted-foreground hover:text-foreground premium-ease border-b border-transparent pb-1"
-              activeProps={{ className: "text-sm text-primary border-b border-primary pb-1 premium-ease" }}
-              activeOptions={{ exact: to === "/" }}
+              end={end}
+              className={({ isActive }) =>
+                `text-sm premium-ease border-b pb-1 ${
+                  isActive
+                    ? "text-primary border-primary"
+                    : "text-muted-foreground hover:text-foreground border-transparent"
+                }`
+              }
             >
               {label}
-            </Link>
+            </NavLink>
           ))}
         </nav>
         <Link

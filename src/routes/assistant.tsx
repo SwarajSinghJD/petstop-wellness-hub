@@ -1,10 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Sparkles } from "lucide-react";
 import { SiteFooter } from "@/components/SiteNav";
+import { useDocTitle } from "@/lib/use-doc-title";
 
-export const Route = createFileRoute("/assistant")({
-  head: () => ({ meta: [{ title: "AI Assistant — PetStop" }] }),
-  component: () => (
+export default function AssistantPage() {
+  useDocTitle("AI Assistant — PetStop");
+  return (
     <>
       <section className="mx-auto max-w-3xl px-6 py-28 text-center">
         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary text-xs uppercase tracking-wider text-primary">
@@ -17,5 +17,5 @@ export const Route = createFileRoute("/assistant")({
       </section>
       <SiteFooter />
     </>
-  ),
-});
+  );
+}

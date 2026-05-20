@@ -1,10 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Phone, AlertCircle } from "lucide-react";
 import { SiteFooter } from "@/components/SiteNav";
+import { useDocTitle } from "@/lib/use-doc-title";
 
-export const Route = createFileRoute("/emergency")({
-  head: () => ({ meta: [{ title: "Emergency — PetStop" }] }),
-  component: () => (
+export default function EmergencyPage() {
+  useDocTitle("Emergency — PetStop");
+  return (
     <>
       <section className="mx-auto max-w-3xl px-6 py-28 text-center">
         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-destructive/10 text-xs uppercase tracking-wider text-destructive">
@@ -20,5 +20,5 @@ export const Route = createFileRoute("/emergency")({
       </section>
       <SiteFooter />
     </>
-  ),
-});
+  );
+}
